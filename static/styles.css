@@ -1,0 +1,25 @@
+.dir_button {
+	width: 100px; 
+	height: 100px; 
+	float: left;
+	background: blue;
+}
+
+.dir_row {
+	height: 100px;
+}
+
+.dir_button.up {
+	margin-left: 100px
+}
+
+.dir_button.down {
+	margin-left: 100px
+}
+
+.dir_button.click {
+	border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+}

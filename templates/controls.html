@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pc Remote controller</title>
+	<script type="text/javascript" src="{{ url_for('static', filename='jquery-3.2.1.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='jquery.mobile-1.4.5.min.js') }}"></script>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<script>
+		$(document).ready(function(){
+			$('.dir_button').click(function() {
+				passedDir = $(this).attr("data-dir")
+				$.get("/mouse/" + passedDir)
+			});
+
+			$( document ).on ( "vmousemove", "#target", function(event) {
+			 	var msg = "Handler for .vmousemove() called at ";
+			  	msg += event.pageX + ", " + event.pageY;
+			  	$( "#log" ).append( " <div>" + msg + "</div>" );
+			});
+		});
+			
+	</script>
+</head>
+<body>
+	<div class='dir_row'>
+		<div class='dir_button up' data-dir='up'></div>
+	</div>
+	<div class='dir_row'>
+		<div class='dir_button left' data-dir='left'></div>
+		<div class='dir_button click' data-dir='click'></div>
+		<div class='dir_button right' data-dir='right'></div>
+	</div>
+	<div class='dir_row'>
+		<div class='dir_button down' data-dir='down'></div>
+	</div>
+	
+</body>
+</html>
