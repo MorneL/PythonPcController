@@ -1,0 +1,6 @@
+pyobjc
+pyobjc-core
+pyautogui
+flask
+flask_cors
+easygui
